@@ -9,7 +9,11 @@ import {
   Breadcrumb,
   Container,
   Row,
-  Col
+  Col,
+  Tabs,
+  Tab,
+  Table,
+  ProgressBar
 } from "react-bootstrap";
 
 class App extends Component {
@@ -54,15 +58,214 @@ class App extends Component {
 
         <Container>
           <Row>
-            <Col className='ml-auto' md={4}>
-          <Breadcrumb>
-            <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-            <Breadcrumb.Item href="#">Liga inggris</Breadcrumb.Item>
-            <Breadcrumb.Item active>Transfer Pemain</Breadcrumb.Item>
-          </Breadcrumb>
+            <Col className="ml-auto" md={4}>
+              <Breadcrumb>
+                <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+                <Breadcrumb.Item href="#">Liga inggris</Breadcrumb.Item>
+                <Breadcrumb.Item active>Transfer Pemain</Breadcrumb.Item>
+              </Breadcrumb>
             </Col>
           </Row>
 
+          <Row>
+            <Col>
+              <h3>Rumor Transfer Pemain</h3>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              <Tabs
+                defaultActiveKey="semua"
+                id="uncontrolled-tab-example"
+                className="mb-3"
+              >
+                <Tab eventKey="semua" title="Semua Transfer">
+                  <Table hover>
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Nama Pemain</th>
+                        <th>Tim</th>
+                        <th>Transfer</th>
+                        <th>Proses Transfer</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>MAROUNE FELLANI</td>
+                        <td>MANCHESTER UNITED</td>
+                        <td>SHANDONG LUNENG</td>
+                        <td>
+                        <ProgressBar animated now={85} label={`${85}%`} />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>LUIS NANI</td>
+                        <td>SPORTING CP</td>
+                        <td>ORLANDO CITY</td>
+                        <td>
+                        <ProgressBar animated now={56} label={`${56}%`} />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>MAREK HAMSIK</td>
+                        <td>NAPOLI</td>
+                        <td>DALIAN YIFANG</td>
+                        <td>
+                        <ProgressBar animated now={95} label={`${95}%`} />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>SARDAR AZMOUN</td>
+                        <td>RUBIN KAZAN</td>
+                        <td>ZEINT ST PETERSBURG</td>
+                        <td>
+                        <ProgressBar animated now={100} label={`${100}%`} />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>MICHY BATSHUAYI</td>
+                        <td>CHELSEA</td>
+                        <td>CRYSTAL PALACE</td>
+                        <td>
+                        <ProgressBar animated now={50} label={`${50}%`} />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>LUCAS PIAZON</td>
+                        <td>CHELSEA</td>
+                        <td>CHIEVO</td>
+                        <td>
+                        <ProgressBar animated now={100} label={`${100}%`} />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                </Tab>
+                <Tab eventKey="liga-primer" title="Liga Primer">
+                <Table hover>
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Nama Pemain</th>
+                        <th>Tim</th>
+                        <th>Transfer</th>
+                        <th>Proses Transfer</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>MAROUNE FELLANI</td>
+                        <td>MANCHESTER UNITED</td>
+                        <td>SHANDONG LUNENG</td>
+                        <td>
+                        <ProgressBar animated now={85} label={`${85}%`} />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>JADON SANCHO</td>
+                        <td>MANCHESTER UNITED</td>
+                        <td>SHANDONG LUNENG</td>
+                        <td>
+                        <ProgressBar animated now={85} label={`${85}%`} />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>MICHY BATSHUAYI</td>
+                        <td>CHELSEA</td>
+                        <td>CRYSTAL PALACE</td>
+                        <td>
+                        <ProgressBar animated now={50} label={`${50}%`} />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>LUCAS PIAZON</td>
+                        <td>CHELSEA</td>
+                        <td>CHIEVO</td>
+                        <td>
+                        <ProgressBar animated now={100} label={`${100}%`} />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>VICTOR MOSES</td>
+                        <td>CHELSEA</td>
+                        <td>SPARTAK MOSKOW</td>
+                        <td>
+                        <ProgressBar animated now={90} label={`${90}%`} />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>DAVID LUIZ</td>
+                        <td>ARSENAL</td>
+                        <td>PARIS SAINT GERMAIN</td>
+                        <td>
+                        <ProgressBar animated now={75} label={`${75}%`} />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                </Tab>
+                <Tab eventKey="serie-a" title="Serie A">
+                <Table hover>
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Nama Pemain</th>
+                        <th>Tim</th>
+                        <th>Transfer</th>
+                        <th>Proses Transfer</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>MAREK HAMSIK</td>
+                        <td>NAPOLI</td>
+                        <td>DALIAN YIFANG</td>
+                        <td>
+                        <ProgressBar animated now={95} label={`${95}%`} />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>ACHRAF HAKIMI</td>
+                        <td>INTER MILAN</td>
+                        <td>PSG</td>
+                        <td>
+                        <ProgressBar animated now={50} label={`${50}%`} />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>SANDRO TONALI</td>
+                        <td>BRESKIA</td>
+                        <td>AC MILAN</td>
+                        <td>
+                        <ProgressBar animated now={65} label={`${65}%`} />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                </Tab>
+                <Tab eventKey="divisi-primera" title="Divisi Primera"></Tab>
+                <Tab eventKey="bundesliga" title="Bundesliga"></Tab>
+                <Tab eventKey="liga-indonesia" title="Liga 1 Indonesia"></Tab>
+              </Tabs>
+            </Col>
+          </Row>
         </Container>
       </div>
     );
