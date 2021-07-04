@@ -13,11 +13,32 @@ import {
   Tabs,
   Tab,
   Table,
-  ProgressBar
+  ProgressBar,
+  Pagination,
+  OverlayTrigger,
+  Popover,
+  Collapse
 } from "react-bootstrap";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tampil: false
+    }
+  }
+
+
   render() {
+    const munculPopover = (
+      <Popover title="Informasi Website">
+        <Popover.Title><strong>Informasi Website</strong></Popover.Title>
+        <Popover.Content>Website ini dibuat untuk memudahkan dalam pencarian informasi terkini
+        tentang berita olahraga</Popover.Content>
+        
+      </Popover>
+    );
+
     return (
       <div>
         <Navbar bg="dark" expand="lg" variant="dark">
@@ -98,7 +119,7 @@ class App extends Component {
                         <td>MANCHESTER UNITED</td>
                         <td>SHANDONG LUNENG</td>
                         <td>
-                        <ProgressBar animated now={85} label={`${85}%`} />
+                          <ProgressBar animated now={85} label={`${85}%`} />
                         </td>
                       </tr>
                       <tr>
@@ -107,7 +128,7 @@ class App extends Component {
                         <td>SPORTING CP</td>
                         <td>ORLANDO CITY</td>
                         <td>
-                        <ProgressBar animated now={56} label={`${56}%`} />
+                          <ProgressBar animated now={56} label={`${56}%`} />
                         </td>
                       </tr>
                       <tr>
@@ -116,7 +137,7 @@ class App extends Component {
                         <td>NAPOLI</td>
                         <td>DALIAN YIFANG</td>
                         <td>
-                        <ProgressBar animated now={95} label={`${95}%`} />
+                          <ProgressBar animated now={95} label={`${95}%`} />
                         </td>
                       </tr>
                       <tr>
@@ -125,7 +146,7 @@ class App extends Component {
                         <td>RUBIN KAZAN</td>
                         <td>ZEINT ST PETERSBURG</td>
                         <td>
-                        <ProgressBar animated now={100} label={`${100}%`} />
+                          <ProgressBar animated now={100} label={`${100}%`} />
                         </td>
                       </tr>
                       <tr>
@@ -134,7 +155,7 @@ class App extends Component {
                         <td>CHELSEA</td>
                         <td>CRYSTAL PALACE</td>
                         <td>
-                        <ProgressBar animated now={50} label={`${50}%`} />
+                          <ProgressBar animated now={50} label={`${50}%`} />
                         </td>
                       </tr>
                       <tr>
@@ -143,14 +164,14 @@ class App extends Component {
                         <td>CHELSEA</td>
                         <td>CHIEVO</td>
                         <td>
-                        <ProgressBar animated now={100} label={`${100}%`} />
+                          <ProgressBar animated now={100} label={`${100}%`} />
                         </td>
                       </tr>
                     </tbody>
                   </Table>
                 </Tab>
                 <Tab eventKey="liga-primer" title="Liga Primer">
-                <Table hover>
+                  <Table hover>
                     <thead>
                       <tr>
                         <th>#</th>
@@ -167,7 +188,7 @@ class App extends Component {
                         <td>MANCHESTER UNITED</td>
                         <td>SHANDONG LUNENG</td>
                         <td>
-                        <ProgressBar animated now={85} label={`${85}%`} />
+                          <ProgressBar animated now={85} label={`${85}%`} />
                         </td>
                       </tr>
                       <tr>
@@ -176,7 +197,7 @@ class App extends Component {
                         <td>MANCHESTER UNITED</td>
                         <td>SHANDONG LUNENG</td>
                         <td>
-                        <ProgressBar animated now={85} label={`${85}%`} />
+                          <ProgressBar animated now={85} label={`${85}%`} />
                         </td>
                       </tr>
                       <tr>
@@ -185,7 +206,7 @@ class App extends Component {
                         <td>CHELSEA</td>
                         <td>CRYSTAL PALACE</td>
                         <td>
-                        <ProgressBar animated now={50} label={`${50}%`} />
+                          <ProgressBar animated now={50} label={`${50}%`} />
                         </td>
                       </tr>
                       <tr>
@@ -194,7 +215,7 @@ class App extends Component {
                         <td>CHELSEA</td>
                         <td>CHIEVO</td>
                         <td>
-                        <ProgressBar animated now={100} label={`${100}%`} />
+                          <ProgressBar animated now={100} label={`${100}%`} />
                         </td>
                       </tr>
                       <tr>
@@ -203,7 +224,7 @@ class App extends Component {
                         <td>CHELSEA</td>
                         <td>SPARTAK MOSKOW</td>
                         <td>
-                        <ProgressBar animated now={90} label={`${90}%`} />
+                          <ProgressBar animated now={90} label={`${90}%`} />
                         </td>
                       </tr>
                       <tr>
@@ -212,14 +233,14 @@ class App extends Component {
                         <td>ARSENAL</td>
                         <td>PARIS SAINT GERMAIN</td>
                         <td>
-                        <ProgressBar animated now={75} label={`${75}%`} />
+                          <ProgressBar animated now={75} label={`${75}%`} />
                         </td>
                       </tr>
                     </tbody>
                   </Table>
                 </Tab>
                 <Tab eventKey="serie-a" title="Serie A">
-                <Table hover>
+                  <Table hover>
                     <thead>
                       <tr>
                         <th>#</th>
@@ -236,7 +257,7 @@ class App extends Component {
                         <td>NAPOLI</td>
                         <td>DALIAN YIFANG</td>
                         <td>
-                        <ProgressBar animated now={95} label={`${95}%`} />
+                          <ProgressBar animated now={95} label={`${95}%`} />
                         </td>
                       </tr>
                       <tr>
@@ -245,7 +266,7 @@ class App extends Component {
                         <td>INTER MILAN</td>
                         <td>PSG</td>
                         <td>
-                        <ProgressBar animated now={50} label={`${50}%`} />
+                          <ProgressBar animated now={50} label={`${50}%`} />
                         </td>
                       </tr>
                       <tr>
@@ -254,7 +275,7 @@ class App extends Component {
                         <td>BRESKIA</td>
                         <td>AC MILAN</td>
                         <td>
-                        <ProgressBar animated now={65} label={`${65}%`} />
+                          <ProgressBar animated now={65} label={`${65}%`} />
                         </td>
                       </tr>
                     </tbody>
@@ -264,6 +285,42 @@ class App extends Component {
                 <Tab eventKey="bundesliga" title="Bundesliga"></Tab>
                 <Tab eventKey="liga-indonesia" title="Liga 1 Indonesia"></Tab>
               </Tabs>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              <Pagination>
+                <Pagination.First />
+                <Pagination.Prev />
+                <Pagination.Item active>{1}</Pagination.Item>
+                <Pagination.Ellipsis />
+
+                <Pagination.Item>{10}</Pagination.Item>
+                <Pagination.Item>{11}</Pagination.Item>
+                <Pagination.Item>{12}</Pagination.Item>
+                <Pagination.Item>{13}</Pagination.Item>
+                <Pagination.Item disabled>{14}</Pagination.Item>
+
+                <Pagination.Ellipsis />
+                <Pagination.Item>{20}</Pagination.Item>
+                <Pagination.Next />
+                <Pagination.Last />
+              </Pagination>
+            </Col>
+          </Row>
+
+          <Row className="mb-3">
+            <Col>
+              <OverlayTrigger
+                trigger="click"
+                placement="right"
+                overlay={munculPopover}
+              >
+                <Button variant="primary">Informasi</Button>
+              </OverlayTrigger>
+              <Button className='ml-1' variant="primary" onClick={() => this.setState({ tampil : !this.state.tampil })}>Versi Website</Button>
+              <Collapse in={this.state.tampil}><p>Akses Sport V1.0</p></Collapse>
             </Col>
           </Row>
         </Container>
